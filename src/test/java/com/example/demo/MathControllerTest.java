@@ -27,38 +27,10 @@ public class MathControllerTest {
     }
 
     @Test
-    public void testCalculateAddsTwoNumbers() throws Exception {
+    public void testCalculatePerformsMathOnTwoNumbers() throws Exception {
         this.mvc.perform(get("/math/calculate?operation=add&x=4&y=6").accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
                 .andExpect(content().string("10"));
-    }
-
-    @Test
-    public void testCalculateMultiplesTwoNumbers() throws Exception {
-        this.mvc.perform(get("/math/calculate?operation=multiply&x=4&y=6").accept(MediaType.TEXT_PLAIN))
-                .andExpect(status().isOk())
-                .andExpect(content().string("24"));
-    }
-
-    @Test
-    public void testCalculateSubtractsTwoNumbers() throws Exception {
-        this.mvc.perform(get("/math/calculate?operation=subtract&x=4&y=6").accept(MediaType.TEXT_PLAIN))
-                .andExpect(status().isOk())
-                .andExpect(content().string("-2"));
-    }
-
-    @Test
-    public void testCalculateDividesTwoNubmers() throws Exception {
-        this.mvc.perform(get("/math/calculate?operation=divide&x=30&y=5").accept(MediaType.TEXT_PLAIN))
-                .andExpect(status().isOk())
-                .andExpect(content().string("6"));
-    }
-
-    @Test
-    public void testCalculateDefaultsToAddition() throws Exception {
-        this.mvc.perform(get("/math/calculate?x=3&y=10").accept(MediaType.TEXT_PLAIN))
-                .andExpect(status().isOk())
-                .andExpect(content().string("13"));
     }
 
     @Test

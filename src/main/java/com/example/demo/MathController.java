@@ -27,4 +27,9 @@ public class MathController {
 
         return MathService.sum(parsedNumbers).toString();
     }
+
+    @RequestMapping("/volume/{length}/{width}/{height}")
+    public String volume(@PathVariable int length, @PathVariable int width, @PathVariable int height) {
+        return new Integer(length * width * height).toString();
+    }
 }

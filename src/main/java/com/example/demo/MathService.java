@@ -25,4 +25,12 @@ public class MathService {
                 return x + y;
         }
     }
+
+    public static double area(double radius) {
+        return Math.PI * (Math.pow(radius, 2));
+    }
+
+    public static double area(double height, double width) {
+        return height * width;
+    }
 }

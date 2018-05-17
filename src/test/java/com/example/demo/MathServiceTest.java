@@ -4,9 +4,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class MathServiceTest {
     @Test
@@ -26,23 +25,37 @@ public class MathServiceTest {
     }
 
     @Test
-    public void testCalculateSubtractsTwoNumbers() throws Exception {
+    public void testCalculateSubtractsTwoNumbers() {
         int result = MathService.calculate("subtract", 4, 6);
 
         assertEquals(-2, result);
     }
 
     @Test
-    public void testCalculateDividesTwoNubmers() throws Exception {
+    public void testCalculateDividesTwoNubmers() {
         int result = MathService.calculate("divide", 30, 5);
 
         assertEquals(6, result);
     }
 
     @Test
-    public void testCalculateDefaultsToAddition() throws Exception {
+    public void testCalculateDefaultsToAddition() {
         int result = MathService.calculate("", 3, 10);
 
         assertEquals(13, result);
+    }
+
+    @Test
+    public void testAreaCalculatesTheAreaOfACircle() {
+        double result = MathService.area( 4);
+
+        assertEquals(50.26548245743669, result, 0.00001);
+    }
+
+    @Test
+    public void testAreaCalculatesTheAreaOfARectangle() {
+        double result = MathService.area(7, 4);
+
+        assertEquals(28, result, 0.00001);
     }
 }
